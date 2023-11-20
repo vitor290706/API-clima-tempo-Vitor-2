@@ -1,4 +1,10 @@
-fetch("http://apiadvisor.climatempo.com.br/api/v1/weather/locale/7716/current?token=ed818cbcfdd1ee9e812536a2302df9a2", {mode: 'no-cors'})
+
+const requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("http://apiadvisor.climatempo.com.br/api/v1/weather/locale/7716/current?token=ed818cbcfdd1ee9e812536a2302df9a2", requestOptions, { mode: 'no-cors' })
   .then(response => response.json())
   .then(result => {
     const city = result.name
@@ -63,9 +69,9 @@ fetch("http://apiadvisor.climatempo.com.br/api/v1/weather/locale/7716/current?to
   })
 
 
-  
-  
-.catch(error => console.log('Erro:', error))
+
+
+  .catch(error => console.log('Erro:', error))
 
 // const city = await fetch("http://apiadvisor.climatempo.com.br/api/v1/weather/locale/7716/current?token=ed818cbcfdd1ee9e812536a2302df9a2")
 // const cityJson = await city.json()
